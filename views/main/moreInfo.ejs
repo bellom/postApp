@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <p class="lead"><a href="/main">YelpCamp</a></p>
+      <div class="list-group">
+        <li class="list-group-item active">info 1</li>
+        <li class="list-group-item">info 2</li>
+        <li class="list-group-item">info 3</li>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="thumbnail">
+        <img  class="image-responsive" src="<%=camp.image %>">
+        <div class="caption-full">
+          <h4 class="pull-right">$<%=camp.price%>/night</h4>
+          <h4><a><%=camp.name %></a></h4>
+         <p><%= camp.description %>.....<p/>
+          <p>
+            <em>Submitted By <%= camp.author.username %></em>
+          <p/>
+        </div>
+        <% if(currentUser && camp.author.id.equals(currentUser._id)){ %>
+          <a class="btn btn-warning" href="/main/<%=camp._id%>/edit">Edit</a>
+          <!--full comment on line 56 reason why we have to use _method-->
+          <form id="delete-form" action="/main/<%= camp._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger">Delete</button>
+          </form>
+        <% } %>
+       </div>
+      <div class="well">
+        <div class="text-right">
+          <a class="btn btn-success" href="/main/<%= camp._id %>/comments/new">Add New Comment</a>
+        </div>
+        <hr>
+        <% camp.comments.forEach(function(comment){ %>
+        <div class="row">
+          <div class="col-md-12">
+            <strong><%= comment.author.username %></strong>
+            <span class="pull-right">10 days ago</span>
+            <p>
+              <%= comment.text %>
+            </p>
+            <!--/main/:id/comments/:comments_id/edit-->
+          <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <a class="btn btn-xs btn-warning"
+              href="/main/<%= camp._id %>/comments/<%= comment._id %>/edit">
+              Edit
+            </a>
+            <form id="delete-form" action ="/main/<%= camp._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-xs btn-danger">Delete</button>
+            </form>
+          <% } %>
+          </div>
+        </div>
+        <% });%>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<% include ../partials/footer %>
+
+<!--We have to use method-override ?_method=PUT syntax in the path to let our application know that we are submitting a PUT request. We can't do it in the method directly, because HTML forms only support GET and POST methods-->
