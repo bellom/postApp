@@ -1,9 +1,9 @@
-# PostApp
+# PostApp Features
 ##Initial Setup
 * Add Landing Page
-* Add Campgrounds Page that lists all campgrounds
+* Add Item Page that lists all items
 
-Each Campground has:
+Each Item has:
    * Name
    * Image
 
@@ -11,24 +11,24 @@ Each Campground has:
 * Create our header and footer partials
 * Add in Bootstrap
 
-##Creating New Campgrounds
-* Setup new campground POST route
+##Creating New Item
+* Setup new item POST route
 * Add in body-parser
 * Setup route to show form
 * Add basic unstyled form
 
-##Style the campgrounds page
+##Style the item page
 * Add a better header/title
-* Make campgrounds display in a grid
+* Make items display in a grid
 
 ##Style the Navbar and Form
 * Add a navbar to all templates
-* Style the new campground form
+* Style the new item form
 
 ##Add Mongoose
 * Install and configure Mongoose
-* Setup campground model
-* Use campground model inside of our routes
+* Setup item model
+* Use item model inside of our routes
 
 ##Show Page
 * Review the RESTful routes we've seen so far
@@ -90,6 +90,10 @@ Each Campground has:
 * Associate users and comments
 * Save author's name to a comment automatically
 
-##Users + Campgrounds
+##Users
 * Prevent an unauthenticated user from creating a campground
 * Save username+id to newly created campground
+
+
+# Contributor
+* Oluwaseun Bello
