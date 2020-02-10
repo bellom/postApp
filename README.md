@@ -1,4 +1,36 @@
-# PostApp Features
+# PostCamp
+A web application where user can post, edit, delete item and comment and other user can comment on the item. 
+
+![image](https://user-images.githubusercontent.com/31897434/74178595-1e667000-4c3c-11ea-8f63-1e236953425c.png)
+
+## [Live Link](https://bellom-postapp.herokuapp.com/)
+
+## Technologies
+* Node.JS
+* Express.JS
+* Bootstrap
+* Passport
+* Heroku
+
+## Installation
+
+1. Clone the project to your local directory
+
+```
+git clone https://github.com/bellom/postApp
+```
+
+2. Run `sudo apt install nodejs`
+
+3. Run `sudo apt install npm -g`
+
+4. Run `cd postApp`
+
+5. Run `npm install`
+
+6. Run `npm start` 
+
+## PostApp Features
 ##Initial Setup
 * Add Landing Page
 * Add Item Page that lists all items
@@ -96,4 +128,4 @@ Each Item has:
 
 
 # Contributor
-* Oluwaseun Bello
+* [Oluwaseun Bello](https://github.com/bellom)
