@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-//seedDB(); //seed the database
+seedDB(); //seed the database
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -48,14 +48,9 @@ app.use(function (req, res, next) {
    next();
 });
 
-
 app.use(mainRoute);
 app.use(commentsRoute);
 app.use(authRoute);
-
-
-
-
 
 
 app.listen(process.env.PORT, process.env.IP, function () {
